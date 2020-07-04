@@ -4,6 +4,10 @@ package main
  * Merge sort - http://en.wikipedia.org/wiki/Merge_sort
  */
 
+import "fmt"
+
+import "github.com/0xAX/go-algorithms"
+
 func Merge(left, right []int) []int {
     result := make([]int, 0, len(left) + len(right))
     
@@ -38,3 +42,11 @@ func MergeSort(arr []int) []int {
     
     return Merge(left, right)
 }
+
+func main() {
+    arr := utils.RandArray(10)
+    fmt.Println("Initial array is:", arr)
+    fmt.Println("")
+    fmt.Println("Sorted array:    ", MergeSort(arr))
+}
+
